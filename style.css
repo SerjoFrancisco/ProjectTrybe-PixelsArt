@@ -1,9 +1,14 @@
 .color {
     border: 1px solid black;
     display: inline-block;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
 }
 .color:nth-child(1){
     background-color: black;
+}
+.pixel{
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
 }
