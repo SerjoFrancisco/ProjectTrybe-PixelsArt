@@ -10,6 +10,20 @@ const board = document.getElementById('pixel-board');
 const n = 5;
 function createLines() {
   for (let i = 0; i < n; i += 1) {
-    board.appendChild(document.createElement('li'));
+    const line = document.createElement('li');
+    line.className = 'lines';
+    board.appendChild(line);
   }
-};
+}
+const linhas = document.getElementsByClassName('lines');
+createLines();
+function createPixels() {
+  for (let i = 0; i < n; i += 1) {
+    for (let i = 0; i < n; i += 1) {
+      const pixel = document.createElement('div');
+      pixel.className = 'pixel';
+      linhas[i].appendChild(pixel);
+    }
+  }
+}
+createPixels();
