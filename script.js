@@ -5,7 +5,7 @@ const cleaner = document.getElementById('clear-board');
 window.onload = function changePallet() {
   pallet[0].style.backgroundColor = 'black';
   for (let i = 1; i < pallet.length; i += 1) {
-    pallet[i].style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+    pallet[i].style.backgroundColor = `#${Math.floor(Math.random() * 16777214).toString(16)}`;
   }
 };
 
