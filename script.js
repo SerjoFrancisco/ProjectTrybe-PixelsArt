@@ -1,6 +1,7 @@
 // gerador de cores retirado deste link https://css-tricks.com/snippets/javascript/random-hex-color/
 const pallet = document.getElementsByClassName('color');
 window.onload = function changePallet() {
+  pallet[0].style.backgroundColor = 'black';
   for (let i = 1; i < pallet.length; i += 1) {
     pallet[i].style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
   }
@@ -19,7 +20,7 @@ const linhas = document.getElementsByClassName('lines');
 createLines();
 function createPixels() {
   for (let i = 0; i < n; i += 1) {
-    for (let i = 0; i < n; i += 1) {
+    for (let j = 0; j < n; j += 1) {
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
       linhas[i].appendChild(pixel);
@@ -27,3 +28,15 @@ function createPixels() {
   }
 }
 createPixels();
+
+function selectColor(event) {
+  const color = event.target.style.backgroundColor;
+  console.log(color);
+}
+function changeColor() {
+  for (let i = 0; i < pallet.length; i += 1) {
+    pallet[i].addEventListener('click', selectColor);
+  }
+}
+changeColor();
+
