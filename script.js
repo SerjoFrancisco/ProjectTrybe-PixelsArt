@@ -5,14 +5,14 @@ const cleaner = document.getElementById('clear-board');
 const form = document.getElementById('board-size');
 const button = document.getElementById('generate-board');
 const board = document.getElementById('pixel-board');
+// Muda cores quando carrega
 window.onload = function changePallet() {
   pallet[0].style.backgroundColor = 'black';
   for (let i = 1; i < pallet.length; i += 1) {
     pallet[i].style.backgroundColor = `#${Math.floor(Math.random() * 16777000).toString(16)}`;
   }
 };
-
-
+// Funções de criar o quadro quando inicia e definição de pixels inicial
 let n = 5;
 function createLines() {
   for (let i = 0; i < n; i += 1) {
@@ -33,38 +33,8 @@ function createPixels() {
   }
 }
 createPixels();
-sessionStorage.setItem('cor', 'black');
-function selectColor(event) {
-  sessionStorage.setItem('cor', event.target.style.backgroundColor);
-  for (let i = 0; i < pallet.length; i += 1) {
-    pallet[i].classList.remove('selected')
-  }
-  event.target.classList.add('selected');
-}
-function changeColor() {
-  pallet[0].className = 'color selected';
-  for (let i = 0; i < pallet.length; i += 1) {
-    pallet[i].addEventListener('click', selectColor);
-  }
-}
 
-changeColor();
-function paint(event) {
-  event.target.style.backgroundColor = sessionStorage.getItem('cor');
-}
-function pincel() {
-  for (let i = 0; i < pixels.length; i += 1) {
-    pixels[i].addEventListener('click', paint);
-  }
-}
-pincel();
-function clean() {
-  for (let i = 0; i < pixels.length; i += 1) {
-    pixels[i].style.backgroundColor = '#ffffff';
-  }
-}
-cleaner.addEventListener('click', clean);
-
+// Muda o quadro dinamicamente
 function changeBoard() {
   if (form.value === '') {
     alert('Board inválido!');
@@ -81,3 +51,39 @@ function changeBoard() {
   createPixels();
 }
 button.addEventListener('click', changeBoard);
+
+// Seleciona a cor que irá pintar e aplica o escutador de evento em todas as cores
+sessionStorage.setItem('cor', 'black');
+function selectColor(event) {
+  sessionStorage.setItem('cor', event.target.style.backgroundColor);
+  for (let i = 0; i < pallet.length; i += 1) {
+    pallet[i].classList.remove('selected');
+  }
+  event.target.classList.add('selected');
+}
+function changeColor() {
+  pallet[0].className = 'color selected';
+  for (let i = 0; i < pallet.length; i += 1) {
+    pallet[i].addEventListener('click', selectColor);
+  }
+}
+changeColor();
+
+// pinta os pixels com a cor escolhida
+function paint(event) {
+  event.target.style.backgroundColor = sessionStorage.getItem('cor');
+}
+function pincel() {
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].addEventListener('click', paint);
+  }
+}
+pincel();
+
+// limpa os pixels
+function clean() {
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].style.backgroundColor = '#ffffff';
+  }
+}
+cleaner.addEventListener('click', clean);
