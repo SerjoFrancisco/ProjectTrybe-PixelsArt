@@ -29,11 +29,12 @@ function createPixels() {
   }
 }
 createPixels();
-
+sessionStorage.setItem('cor', 'black');
 function selectColor(event) {
   sessionStorage.setItem('cor', event.target.style.backgroundColor);
- }
+}
 function changeColor() {
+  pallet[0].className = 'color selected';
   for (let i = 0; i < pallet.length; i += 1) {
     pallet[i].addEventListener('click', selectColor);
   }
@@ -42,7 +43,6 @@ function changeColor() {
 changeColor();
 function paint(event) {
   event.target.style.backgroundColor = sessionStorage.getItem('cor');
-  console.log(event.target);
 }
 function pincel() {
   for (let i = 0; i < pixels.length; i += 1) {
