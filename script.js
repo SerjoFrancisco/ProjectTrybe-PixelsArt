@@ -61,6 +61,9 @@ function clean() {
 cleaner.addEventListener('click', clean);
 
 function changeBoard() {
+  if(form.value === ''){
+    alert('Board inválido!')
+  }
   if (parseInt(form.value, 10) > 50){
     n = 50;
   } else if (parseInt(form.value, 10) < 5){
