@@ -8,7 +8,7 @@ const board = document.getElementById('pixel-board');
 window.onload = function changePallet() {
   pallet[0].style.backgroundColor = 'black';
   for (let i = 1; i < pallet.length; i += 1) {
-    pallet[i].style.backgroundColor = `#${Math.floor(Math.random() * 16777214).toString(16)}`;
+    pallet[i].style.backgroundColor = `#${Math.floor(Math.random() * 16777000).toString(16)}`;
   }
 };
 
@@ -61,21 +61,16 @@ function clean() {
 cleaner.addEventListener('click', clean);
 
 function changeBoard() {
-  if(form.value === ''){
-    alert('Board inválido!')
+  if (form.value === '') {
+    alert('Board inválido!');
   }
-  if (parseInt(form.value, 10) > 50){
+  if (parseInt(form.value, 10) > 50) {
     n = 50;
-  } else if (parseInt(form.value, 10) < 5){
+  } else if (parseInt(form.value, 10) < 5) {
     n = 5;
   } else {
-  n = parseInt(form.value, 10);}
-  // for (let i = 0; i < lines.length; i += 1) {
-  //   lines[i].remove();
-  // }
-  // for (let j = 0; j < pixels.length; j += 1) {
-  //   pixels[j].remove();
-  //  }
+    n = parseInt(form.value, 10);
+  }
   board.innerHTML = '';
   createLines();
   createPixels();
