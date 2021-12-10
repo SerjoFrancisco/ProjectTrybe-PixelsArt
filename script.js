@@ -51,10 +51,9 @@ function pincel() {
   }
 }
 pincel();
-function clean(){
-  for( let i = 0; i < pixels.length; i += 1){
-    pixels[i].style.backgroundColor = '#ffffff'
+function clean() {
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].style.backgroundColor = '#ffffff';
   }
 }
 cleaner.addEventListener('click', clean);
-
