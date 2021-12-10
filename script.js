@@ -12,6 +12,7 @@ window.onload = function changePallet() {
   }
 };
 
+
 let n = 5;
 function createLines() {
   for (let i = 0; i < n; i += 1) {
@@ -35,8 +36,8 @@ createPixels();
 sessionStorage.setItem('cor', 'black');
 function selectColor(event) {
   sessionStorage.setItem('cor', event.target.style.backgroundColor);
-  for (let i = 0; i < pallet.length; i+= 1) {
-    pallet[i].classList.remove('selected') 
+  for (let i = 0; i < pallet.length; i += 1) {
+    pallet[i].classList.remove('selected')
   }
   event.target.classList.add('selected');
 }
