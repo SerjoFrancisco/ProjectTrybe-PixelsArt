@@ -36,7 +36,7 @@ sessionStorage.setItem('cor', 'black');
 function selectColor(event) {
   sessionStorage.setItem('cor', event.target.style.backgroundColor);
   for (let i = 0; i < pallet.length; i+= 1) {
-    pallet[0].classList.remove('selected') 
+    pallet[i].classList.remove('selected') 
   }
   event.target.classList.add('selected');
 }
