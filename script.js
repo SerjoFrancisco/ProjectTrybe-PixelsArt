@@ -35,6 +35,10 @@ createPixels();
 sessionStorage.setItem('cor', 'black');
 function selectColor(event) {
   sessionStorage.setItem('cor', event.target.style.backgroundColor);
+  for (let i = 0; i < pallet.length; i+= 1) {
+    pallet[0].classList.remove('selected') 
+  }
+  event.target.classList.add('selected');
 }
 function changeColor() {
   pallet[0].className = 'color selected';
