@@ -71,7 +71,8 @@ changeColor();
 
 // pinta os pixels com a cor escolhida
 function paint(event) {
-  event.target.style.backgroundColor = sessionStorage.getItem('cor');
+  const alvo = event.target;
+  alvo.style.backgroundColor = sessionStorage.getItem('cor');
 }
 function pincel() {
   for (let i = 0; i < pixels.length; i += 1) {

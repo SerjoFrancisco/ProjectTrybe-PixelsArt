@@ -1,15 +1,18 @@
 * {
   text-align: center;
 }
+
 .color {
   border: 1px solid black;
   display: inline-block;
   width: 40px;
   height: 40px;
 }
+
 /* .color:nth-child(1) {
   background-color: black;
 } */
+
 .pixel {
   width: 40px;
   height: 40px;
@@ -17,10 +20,12 @@
   display: inline-block;
   background-color: white;
 }
+
 .lines {
   margin: -5px 0;
   display: block;
 }
+
 ul {
   padding: 0;
 }
