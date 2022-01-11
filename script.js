@@ -5,7 +5,7 @@ const cleaner = document.getElementById('clear-board');
 const form = document.getElementById('board-size');
 const button = document.getElementById('generate-board');
 const board = document.getElementById('pixel-board');
-// Muda cores quando carrega
+// Muda cores quando carrega,através dessa função que multiplica o random por quase todas as cores posiveis, excluindo o branco, e após isso converte para string em hexadecimal
 window.onload = function changePallet() {
   pallet[0].style.backgroundColor = 'black';
   for (let i = 1; i < pallet.length; i += 1) {
