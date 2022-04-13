@@ -49,6 +49,7 @@ function changeBoard() {
   board.innerHTML = '';
   createLines();
   createPixels();
+  pincel();
 }
 button.addEventListener('click', changeBoard);
 
